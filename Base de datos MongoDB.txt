@@ -1,4 +1,6 @@
+
 use TRABAJO;
+    db.dropDatabase("Pokedex");
     db.createCollection("Pokedex");
     db.Pokedex.insertMany([
         {
@@ -7,6 +9,7 @@ use TRABAJO;
             "Juegos": "Pokémon Rojo/Verde/Azul/Amarillo",
             "Generación": "Primera",
             "Mecánica": "El juego completo",
+            "Numero_pokemons": 151,
             "Pokémon": [
                 {
                     "Número": "001",
@@ -31,6 +34,7 @@ use TRABAJO;
             "Juegos": "Pokémon Oro/Plata/Cristal",
             "Generación": "Segunda",
             "Mecánica": "Crianza y ciclo día/noche",
+            "Numero_pokemons": 100,
             "Pokémon": [
                 {
                     "Número": "152",
@@ -55,6 +59,7 @@ use TRABAJO;
             "Juegos": "Pokémon Rubí/Zafiro/Esmeralda",
             "Generación": "Tercera",
             "Mecánica": "Habilidades y concursos Pokémon",
+            "Numero_pokemons": 135,
             "Pokémon": [
                 {
                     "Número": "252",
@@ -79,6 +84,7 @@ use TRABAJO;
             "Juegos": "Pokémon Diamante/Perla/Platino",
             "Generación": "Cuarta",
             "Mecánica": "Movimientos divididos en físico/especial",
+            "Numero_pokemons": 107,
             "Pokémon": [
                 {
                     "Número": "387",
@@ -103,6 +109,7 @@ use TRABAJO;
             "Juegos": "Pokémon Negro/Blanco",
             "Generación": "Quinta",
             "Mecánica": "Combates triples y rotatorios",
+            "Numero_pokemons": 156,
             "Pokémon": [
                 {
                     "Número": "495",
@@ -127,6 +134,7 @@ use TRABAJO;
             "Juegos": "Pokémon X/Y",
             "Generación": "Sexta",
             "Mecánica": "Megaevolución",
+            "Numero_pokemons": 72,
             "Pokémon": [
                 {
                     "Número": "650",
@@ -151,6 +159,7 @@ use TRABAJO;
             "Juegos": "Pokémon Sol/Luna",
             "Generación": "Séptima",
             "Mecánica": "Movimientos Z",
+            "Numero_pokemons": 88,
             "Pokémon": [
                 {
                     "Número": "722",
@@ -175,6 +184,7 @@ use TRABAJO;
             "Juegos": "Pokémon Espada/Escudo",
             "Generación": "Octava",
             "Mecánica": "Dynamax y Gigantamax",
+            "Numero_pokemons": 82,
             "Pokémon": [
                 {
                     "Número": "810",
@@ -199,6 +209,7 @@ use TRABAJO;
             "Juegos": "Pokémon Escarlata/Púrpura",
             "Generación": "Novena",
             "Mecánica": "Teracristalización",
+            "Numero_pokemons": 120,
             "Pokémon": [
                 {
                     "Número": "906",
@@ -223,6 +234,7 @@ use TRABAJO;
             "Juegos": "Pokémon Leyendas: Arceus",
             "Generación": "Cuarta (precuela)",
             "Mecánica": "Exploración de mundo abierto",
+            "Numero_pokemons": 8,
             "Pokémon": [
                 {
                     "Número": "001",
@@ -243,4 +255,4 @@ use TRABAJO;
             }
         ]);
 
-    db.Pokedex.find({},{})
+    db.Pokedex.find({},{});
