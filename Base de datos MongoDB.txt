@@ -1,0 +1,246 @@
+use TRABAJO;
+    db.createCollection("Pokedex");
+    db.Pokedex.insertMany([
+        {
+            "_id": "1",
+            "Region": "Kanto",
+            "Juegos": "Pokémon Rojo/Verde/Azul/Amarillo",
+            "Generación": "Primera",
+            "Mecánica": "El juego completo",
+            "Pokémon": [
+                {
+                    "Número": "001",
+                    "Nombre": "Bulbasaur",
+                    "Tipo_principal": "Planta/Veneno"
+                    },
+                {
+                    "Número": "004",
+                    "Nombre": "Charmander",
+                    "Tipo_principal": "Fuego"
+                    },
+                {
+                    "Número": "007",
+                    "Nombre": "Squirtle",
+                    "Tipo_principal": "Agua"
+                    }
+                ]
+            },
+        {
+            "_id": "2",
+            "Region": "Johto",
+            "Juegos": "Pokémon Oro/Plata/Cristal",
+            "Generación": "Segunda",
+            "Mecánica": "Crianza y ciclo día/noche",
+            "Pokémon": [
+                {
+                    "Número": "152",
+                    "Nombre": "Chikorita",
+                    "Tipo_principal": "Planta"
+                    },
+                {
+                    "Número": "155",
+                    "Nombre": "Cyndaquil",
+                    "Tipo_principal": "Fuego"
+                    },
+                {
+                    "Número": "158",
+                    "Nombre": "Totodile",
+                    "Tipo_principal": "Agua"
+                    }
+                ]
+            },
+        {
+            "_id": "3",
+            "Region": "Hoenn",
+            "Juegos": "Pokémon Rubí/Zafiro/Esmeralda",
+            "Generación": "Tercera",
+            "Mecánica": "Habilidades y concursos Pokémon",
+            "Pokémon": [
+                {
+                    "Número": "252",
+                    "Nombre": "Treecko",
+                    "Tipo_principal": "Planta"
+                    },
+                {
+                    "Número": "255",
+                    "Nombre": "Torchic",
+                    "Tipo_principal": "Fuego"
+                    },
+                {
+                    "Número": "258",
+                    "Nombre": "Mudkip",
+                    "Tipo_principal": "Agua"
+                    }
+                ]
+            },
+        {
+            "_id": "4",
+            "Region": "Sinnoh",
+            "Juegos": "Pokémon Diamante/Perla/Platino",
+            "Generación": "Cuarta",
+            "Mecánica": "Movimientos divididos en físico/especial",
+            "Pokémon": [
+                {
+                    "Número": "387",
+                    "Nombre": "Turtwig",
+                    "Tipo_principal": "Planta"
+                    },
+                {
+                    "Número": "390",
+                    "Nombre": "Chimchar",
+                    "Tipo_principal": "Fuego"
+                    },
+                {
+                    "Número": "393",
+                    "Nombre": "Piplup",
+                    "Tipo_principal": "Agua"
+                    }
+                ]
+            },
+        {
+            "_id": "5",
+            "Region": "Unova",
+            "Juegos": "Pokémon Negro/Blanco",
+            "Generación": "Quinta",
+            "Mecánica": "Combates triples y rotatorios",
+            "Pokémon": [
+                {
+                    "Número": "495",
+                    "Nombre": "Snivy",
+                    "Tipo_principal": "Planta"
+                    },
+                {
+                    "Número": "498",
+                    "Nombre": "Tepig",
+                    "Tipo_principal": "Fuego"
+                    },
+                {
+                    "Número": "501",
+                    "Nombre": "Oshawott",
+                    "Tipo_principal": "Agua"
+                    }
+                ]
+            },
+        {
+            "_id": "6",
+            "Region": "Kalos",
+            "Juegos": "Pokémon X/Y",
+            "Generación": "Sexta",
+            "Mecánica": "Megaevolución",
+            "Pokémon": [
+                {
+                    "Número": "650",
+                    "Nombre": "Chespin",
+                    "Tipo_principal": "Planta"
+                    },
+                {
+                    "Número": "653",
+                    "Nombre": "Fennekin",
+                    "Tipo_principal": "Fuego"
+                    },
+                {
+                    "Número": "656",
+                    "Nombre": "Froakie",
+                    "Tipo_principal": "Agua"
+                    }
+                ]
+            },
+        {
+            "_id": "7",
+            "Region": "Alola",
+            "Juegos": "Pokémon Sol/Luna",
+            "Generación": "Séptima",
+            "Mecánica": "Movimientos Z",
+            "Pokémon": [
+                {
+                    "Número": "722",
+                    "Nombre": "Rowlet",
+                    "Tipo_principal": "Planta/Volador"
+                    },
+                {
+                    "Número": "725",
+                    "Nombre": "Litten",
+                    "Tipo_principal": "Fuego"
+                    },
+                {
+                    "Número": "728",
+                    "Nombre": "Popplio",
+                    "Tipo_principal": "Agua"
+                    }
+                ]
+            },
+        {
+            "_id": "8",
+            "Region": "Galar",
+            "Juegos": "Pokémon Espada/Escudo",
+            "Generación": "Octava",
+            "Mecánica": "Dynamax y Gigantamax",
+            "Pokémon": [
+                {
+                    "Número": "810",
+                    "Nombre": "Grookey",
+                    "Tipo_principal": "Planta"
+                    },
+                {
+                    "Número": "813",
+                    "Nombre": "Scorbunny",
+                    "Tipo_principal": "Fuego"
+                    },
+                {
+                    "Número": "816",
+                    "Nombre": "Sobble",
+                    "Tipo_principal": "Agua"
+                    }
+                ]
+            },
+        {
+            "_id": "9",
+            "Region": "Paldea",
+            "Juegos": "Pokémon Escarlata/Púrpura",
+            "Generación": "Novena",
+            "Mecánica": "Teracristalización",
+            "Pokémon": [
+                {
+                    "Número": "906",
+                    "Nombre": "Sprigatito",
+                    "Tipo_principal": "Planta"
+                    },
+                {
+                    "Número": "909",
+                    "Nombre": "Fuecoco",
+                    "Tipo_principal": "Fuego"
+                    },
+                {
+                    "Número": "912",
+                    "Nombre": "Quaxly",
+                    "Tipo_principal": "Agua"
+                    }
+                ]
+            },
+        {
+            "_id": "10",
+            "Region": "Hisui",
+            "Juegos": "Pokémon Leyendas: Arceus",
+            "Generación": "Cuarta (precuela)",
+            "Mecánica": "Exploración de mundo abierto",
+            "Pokémon": [
+                {
+                    "Número": "001",
+                    "Nombre": "Rowlet",
+                    "Tipo_principal": "Planta/Volador"
+                    },
+                {
+                    "Número": "004",
+                    "Nombre": "Cyndaquil",
+                    "Tipo_principal": "Fuego"
+                    },
+                {
+                    "Número": "007",
+                    "Nombre": "Oshawott",
+                    "Tipo_principal": "Agua"
+                    }
+                ]
+            }
+        ]);
+
+    db.Pokedex.find({},{})
