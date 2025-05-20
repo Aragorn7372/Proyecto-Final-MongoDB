@@ -243,7 +243,7 @@ use TRABAJO;
                     },
                 {
                     "Número": 155,
-                    "Nombre": Cyndaquil,
+                    "Nombre": "Cyndaquil",
                     "Tipo_principal": "Fuego"
                     },
                 {

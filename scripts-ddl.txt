@@ -1,5 +1,13 @@
-//obtener Region, juegos donde aparece y la generacion a la que aparece ordenados por orden alfabetico
+//obtener Region, juegos donde aparece y la generacion a la que aparece ordenados por orden alfabetico.
 db.Pokedex.find({},{_id:0,Region:1,Juegos:1,Generación:1,}).sort({Region:1});
 
-//Obtener Region, Juegos donde aparece, generacion y numero de iniciales Regiones con mas de 150 pokemons
+//Obtener Region, Juegos donde aparece y generacion  Regiones con mas de 150 pokemons.
 db.Pokedex.find({Numero_pokemons: {$gt: NumberInt(150)}},{_id:0, Region:1, Juegos:1,Generación:1});
+
+//Obtener generacion, pokemons, juegos, numero de pokemons y region de las regiones que tengan pokemons iniciales tipo agua con numero de pokedex superior al 500.
+db.Pokedex.find({Pokémon: {$elemMatch: {Tipo_principal: "Agua", Número: {$gt: 500}}}},{_id:0,Mecánica:0});
+
+//Obtener Region, Juegos donde aparece, mecanica y numero de pokemons de regiones con mas de 100 pokemons que no sea hoenn o de la primera generacion.
+db.Pokedex.find({Numero_pokemons: {$gt:100}, Region:{$not:{$eq: "Hoenn"}}, Generación:{$not:{$eq: "Primera"}}},
+{_id:0,Region:1,Juegos:1,Mecánica:1,Numero_pokemons:1});
+
