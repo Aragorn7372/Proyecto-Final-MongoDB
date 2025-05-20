@@ -1,0 +1,5 @@
+//obtener Region, juegos donde aparece y la generacion a la que aparece ordenados por orden alfabetico
+db.Pokedex.find({},{_id:0,Region:1,Juegos:1,Generación:1,}).sort({Region:1});
+
+//Obtener Region, Juegos donde aparece, generacion y numero de iniciales Regiones con mas de 150 pokemons
+db.Pokedex.find({Numero_pokemons: {$gt: NumberInt(150)}},{_id:0, Region:1, Juegos:1,Generación:1});
