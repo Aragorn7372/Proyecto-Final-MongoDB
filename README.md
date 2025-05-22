@@ -1,21 +1,23 @@
-# 📊 Proyecto Final - MongoDB  
-**Explorando el poder de las bases de datos NoSQL**  
+# 📊 Proyecto Final - MongoDB
+
+**Explorando el poder de las bases de datos NoSQL**
 
 ---
 
-## 📌 Descripción del Proyecto  
+## 📌 Descripción del Proyecto
+
 Este proyecto es una implementación práctica de **MongoDB**, diseñado para demostrar las capacidades de esta base de datos NoSQL.  
-El proyecto consta de una pequeña base de datos con tematica de pokemon, ademas de un script con 8 consultas de las cuales 4 son
+El proyecto consta de una pequeña base de datos con temática de pokemon, ademas de un script con 8 consultas de las cuales 4 son
 con find() y las otras 4 con aggregate()
 
 ---
 
-## 👥 Miembros del Equipo  
+## 👥 Miembros del Equipo
 
-| **Nombre**           | **Rol**                | **Contribución**                          |  
-|----------------------|------------------------|------------------------------------------------------------------|  
-| *Adrian*             | Organizador            | Diseño del README, organiza el grupo y realiza algunas consultas |  
-| *Ariel*              | Documentador           | Consultas aggregate y documentacion del proyecto                 |  
-| *Victor*             | Mr. Repositorio        | Consultas faciles, dueño del proyecto y quejica principal        |  
+| **Nombre** | **Rol**         | **Contribución**                                                 |
+| ---------- | --------------- | ---------------------------------------------------------------- |
+| _Adrian_   | Organizador     | Diseño del README, organiza el grupo y realiza algunas consultas |
+| _Ariel_    | Documentador    | Consultas aggregate y documentación del proyecto                 |
+| _Victor_   | Mr. Repositorio | Consultas fáciles, dueño del proyecto y quejica principal        |
 
-🌟 *"Trabajando juntos para dominar MongoDB"* 🌟  
+🌟 _"Trabajando juntos para dominar MongoDB"_ 🌟
