@@ -1,13 +1,94 @@
-//obtener Region, juegos donde aparece y la generacion a la que aparece ordenados por orden alfabetico.
+use TRABAJO;
+
+//1 - obtener Region, juegos donde aparece y la generacion a la que aparece ordenados por orden alfabetico.
 db.Pokedex.find({},{_id:0,Region:1,Juegos:1,Generación:1,}).sort({Region:1});
 
-//Obtener Region, Juegos donde aparece y generacion  Regiones con mas de 150 pokemons.
+//2 - Obtener Region, Juegos donde aparece y generacion  Regiones con mas de 150 pokemons.
 db.Pokedex.find({Numero_pokemons: {$gt: NumberInt(150)}},{_id:0, Region:1, Juegos:1,Generación:1});
 
-//Obtener generacion, pokemons, juegos, numero de pokemons y region de las regiones que tengan pokemons iniciales tipo agua con numero de pokedex superior al 500.
+//3 - Obtener generacion, pokemons, juegos, numero de pokemons y region de las regiones que tengan pokemons iniciales tipo agua con numero de pokedex superior al 500.
 db.Pokedex.find({Pokémon: {$elemMatch: {Tipo_principal: "Agua", Número: {$gt: 500}}}},{_id:0,Mecánica:0});
 
-//Obtener Region, Juegos donde aparece, mecanica y numero de pokemons de regiones con mas de 100 pokemons que no sea hoenn o de la primera generacion.
+//4 - Obtener Region, Juegos donde aparece, mecanica y numero de pokemons de regiones con mas de 100 pokemons que no sea hoenn o de la primera generacion.
 db.Pokedex.find({Numero_pokemons: {$gt:100}, Region:{$not:{$eq: "Hoenn"}}, Generación:{$not:{$eq: "Primera"}}},
 {_id:0,Region:1,Juegos:1,Mecánica:1,Numero_pokemons:1});
 
+
+//5 - Filtra regiones con más de 100 pokémons, ordena por region y limita a 5 resultados
+    db.Pokedex.aggregate([
+        { $match: { Numero_pokemons: { $gt: 100 } } },
+        { $sort: { Region: 1 } },
+        { $limit: 5 }
+        ]);
+
+//6. Divide regiones en pares/impares (según _id) y calcula media de pokémons por grupo y un total de regiones por grupo
+    db.Pokedex.aggregate([
+        {
+            $project: {
+                Region: 1,
+                Numero_pokemons: 1,
+                // Determina si el _id es par o impar
+                grupo: {
+                    $cond: {
+                        if: { $eq: [{ $mod: ["$_id", 2] }, 0] },
+                        then: "Regiones pares",
+                        else: "Regiones impares"
+                        }
+                    }
+                }
+            },
+        {
+            $group: {
+                _id: "$grupo",                       // Agrupa por el grupo creado (pares/impares)
+                totalRegiones: { $sum: 1 },          // Cuenta cuántas regiones hay en cada grupo
+                mediaPokemons: { $avg: "$Numero_pokemons" },  // Calcula la media de pokémons
+                regiones: { $push: "$Region" }       // Lista las regiones incluidas en cada grupo
+                }
+            },
+        {
+            $project: {
+                _id: 0,
+                grupo: "$_id",
+                totalRegiones: 1,
+                mediaPokemons: { $round: ["$mediaPokemons", 2] },  // Redondea a 2 decimales
+                regiones: 1
+                }
+            }
+        ]);
+
+//7 - Descompone array Pokémon y filtra solo tipos de Fuego
+    db.Pokedex.aggregate([
+        { $unwind: "$Pokémon" },
+        {
+            $match: {
+                "Pokémon.Tipo_principal": /Fuego/
+                }
+            },
+        {
+            $project: {
+                Region: 1,
+                "Pokémon.Nombre": 1,
+                "Pokémon.Tipo_principal": 1
+                }
+            }
+        ]);
+
+    // 8 - Calcula densidad de pokémons (nº pokemons/100) y crea descripción concatenada indicando la región y la generacion
+    db.Pokedex.aggregate([
+        {
+            $project: {
+                // Calcula densidad (pokémons/100) con división y multiplicación
+                Densidad: { $divide: ["$Numero_pokemons", 100] },
+                // Concatena región y generación con texto adicional
+                Descripción: {
+                    $concat: [
+                        "La región ",
+                        "$Region",
+                        " pertenece a la ",
+                        "$Generación",
+                        " generación"
+                        ]
+                    },
+                }
+            }
+        ]);
