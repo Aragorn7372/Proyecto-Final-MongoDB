@@ -1,6 +1,6 @@
 use TRABAJO;
 
-//1 - obtener Region, juegos donde aparece y la generacion a la que aparece ordenados por orden alfabetico.
+//1 - Obtener Region, juegos donde aparece y la generacion a la que aparece ordenados por orden alfabetico.
 db.Pokedex.find({},{_id:0,Region:1,Juegos:1,Generación:1,}).sort({Region:1});
 
 //2 - Obtener Region, Juegos donde aparece y generacion  Regiones con mas de 150 pokemons.
@@ -21,7 +21,7 @@ db.Pokedex.find({Numero_pokemons: {$gt:100}, Region:{$not:{$eq: "Hoenn"}}, Gener
         { $limit: 5 }
         ]);
 
-//6. Divide regiones en pares/impares (según _id) y calcula media de pokémons por grupo y un total de regiones por grupo
+//6 - Divide regiones en pares/impares (según _id) y calcula media de pokémons por grupo y un total de regiones por grupo
     db.Pokedex.aggregate([
         {
             $project: {
@@ -73,7 +73,7 @@ db.Pokedex.find({Numero_pokemons: {$gt:100}, Region:{$not:{$eq: "Hoenn"}}, Gener
             }
         ]);
 
-    // 8 - Calcula densidad de pokémons (nº pokemons/100) y crea descripción concatenada indicando la región y la generacion
+// 8 - Calcula densidad de pokémons (nº pokemons/100) y crea descripción concatenada indicando la región y la generacion
     db.Pokedex.aggregate([
         {
             $project: {

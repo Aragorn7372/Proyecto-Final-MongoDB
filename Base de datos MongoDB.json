@@ -1,13 +1,4 @@
-// La base de datos de Pokedex tiene 10 documentos de las regiones de los juegos de pokemon, estas están compuestas por el _id, Región, 
-// Juegos, Generación, Mecanica, Numero_pokemons, Pokémon.
-// Por orden estas representan, el identificador en la base de datos, el nombre de la región, los juegos en los cuales la historia 
-// transcurre en dicha región, generación en la cual aparece, la mecánica o mecánicas que aporto a la saga, el numero de pokemons que 
-// añadió y sus pokemons inicales, estos están compuestos por su numero de la pokedex, el nombre del pokemon y sus tipos.
-
-use TRABAJO;
-    db.dropDatabase("Pokedex");
-    db.createCollection("Pokedex");
-    db.Pokedex.insertMany([
+[
         {
             "_id": 1,
             "Region": "Kanto",
@@ -258,6 +249,4 @@ use TRABAJO;
                     }
                 ]
             }
-        ]);
-
-    db.Pokedex.find({},{});
+        ]
